@@ -13,18 +13,24 @@
         <h1 class="main-title">
           <span class="main-title-gradient">Welcome</span> to GALLERY
         </h1>
-        <form class="form">
-          <label>
+        <form class="form-search">
+          <label class="form-title-input">
             <input
+              class="form-input"
               type="text"
               name="search-text"
               placeholder="Search images..."
               required
             />
           </label>
-          <button type="submit">Search</button><span class="loader"></span>
+          <button class="form-btn" type="submit">Search</button>
         </form>
+
         <ul class="gallery"></ul>
+        <div class="loader-and-btn">
+          <span class="loader is-hidden"></span>
+          <button class="load-more-btn" type="button">Load more</button>
+        </div>
       </div>
     </main>
     <script type="module" src="./main.js"></script>
