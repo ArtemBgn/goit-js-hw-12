@@ -55,35 +55,12 @@
 .sl-wrapper .sl-counter {
   color: #fff;
 }
-/* .loader {
-  display: block;
-  width: 64px;
-  height: 64px;
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  background-color: rgba(219, 13, 13, 0.4);
-  background-image:
-    linear-gradient(#0019f7 16px, transparent 0),
-    linear-gradient(#ff3d00 16px, transparent 0),
-    linear-gradient(#ff3d00 16px, transparent 0),
-    linear-gradient(#01f801 16px, transparent 0);
-  background-repeat: no-repeat;
-  background-size: 16px 16px;
-  background-position:
-    left top,
-    left bottom,
-    right top,
-    right bottom;
-  animation: rotate 1s linear infinite;
-} */
+
 .loader-and-btn {
   margin: 0 auto;
   display: flex;
   gap: 8px;
   width: 181px;
-  /* justify-content: flex-end; */
-  /* justify-content: end; */
   height: 48px;
 }
 .loader {
@@ -92,7 +69,6 @@
   border-radius: 50%;
   display: inline-block;
   margin: 0 auto;
-  /* margin-bottom: 8px; */
   border: 3px solid;
   border-color: #0b0258 #0b0258 transparent transparent;
   box-sizing: border-box;
@@ -146,7 +122,6 @@
 }
 
 .load-more-btn {
-  /* position: relative; */
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -179,6 +154,5 @@
 
 .is-btn-visible {
   display: block;
-  /* display: flex; */
-  margin: auto 0 auto auto;
+  margin: 0 auto;
 }

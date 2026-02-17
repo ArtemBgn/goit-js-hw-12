@@ -86,7 +86,6 @@ export function hideLoadMoreButton() {
 }
 
 export function autoScroll() {
-  // const liElement = galImg.firstElementChild;
   const heigthLi = 2 * galImg.firstElementChild.getBoundingClientRect().height;
   console.log('🚀 heigthLi:', heigthLi);
   window.scrollBy({

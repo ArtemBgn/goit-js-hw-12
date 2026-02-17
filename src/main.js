@@ -60,7 +60,7 @@ formEl.addEventListener('submit', async e => {
   showLoader();
 
   try {
-    const data = await getImagesByQuery(store.query, store.page);
+    const data = await getImagesByQuery(store.query, store.perPage, store.page);
     store.totalPages = Math.ceil(data.totalHits / store.perPage);
     if (data.totalHits < 1) {
       iziToast.show({
@@ -75,13 +75,11 @@ formEl.addEventListener('submit', async e => {
     }
     createGallery(data.hits);
     store.actionIsLastPage();
-  } catch {
-    error => {
-      iziToast.error({
-        message: `Error ${error.message}`,
-        position: 'topright',
-      });
-    };
+  } catch (error) {
+    iziToast.error({
+      message: `Error ${error.message}`,
+      position: 'topright',
+    });
   } finally {
     hideLoader();
   }
@@ -89,24 +87,19 @@ formEl.addEventListener('submit', async e => {
 
 loadMoreBtn.addEventListener('click', async e => {
   store.page += 1;
+  hideLoadMoreButton();
   showLoader();
 
   try {
-    const data = await getImagesByQuery(store.query, store.page);
+    const data = await getImagesByQuery(store.query, store.perPage, store.page);
     createGallery(data.hits);
-    window.scrollBy({
-      top: 580,
-      behavior: 'smooth',
-    });
-    // autoScroll();
+    autoScroll();
     store.actionIsLastPage();
-  } catch {
-    error => {
-      iziToast.error({
-        message: `Error ${error.message}`,
-        position: 'topright',
-      });
-    };
+  } catch (error) {
+    iziToast.error({
+      message: `Error ${error.message}`,
+      position: 'topright',
+    });
   } finally {
     hideLoader();
   }
