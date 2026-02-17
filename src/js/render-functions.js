@@ -86,11 +86,11 @@ export function hideLoadMoreButton() {
 }
 
 export function autoScroll() {
-  const liElement = document.querySelector('li.gallery-item');
-  const heigthLi = 2 * liElement.getBoundingClientRect().height;
+  // const liElement = galImg.firstElementChild;
+  const heigthLi = 2 * galImg.firstElementChild.getBoundingClientRect().height;
+  console.log('🚀 heigthLi:', heigthLi);
   window.scrollBy({
     top: heigthLi,
-    left: 0,
     behavior: 'smooth',
   });
 }

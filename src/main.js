@@ -94,8 +94,11 @@ loadMoreBtn.addEventListener('click', async e => {
   try {
     const data = await getImagesByQuery(store.query, store.page);
     createGallery(data.hits);
-    autoScroll();
-    // setTimeout(autoScroll, 1500);
+    window.scrollBy({
+      top: 580,
+      behavior: 'smooth',
+    });
+    // autoScroll();
     store.actionIsLastPage();
   } catch {
     error => {
